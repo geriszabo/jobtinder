@@ -18,6 +18,7 @@ function Card({
       className={`
       relative 
       duration-500
+      
       ${likeAction.likePressed ? "translate-x-96 rotate-12 " : ""}
       ${likeAction.likeHovered ? "translate-x-20 rotate-12 " : ""}
       ${likeAction.dislikePressed ? "-translate-x-96 -rotate-12 " : ""}

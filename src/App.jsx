@@ -10,6 +10,7 @@ import Geri1 from "./Images/geri.jpg";
 import Geri2 from "./Images/geri2.png";
 import Person1 from "./Images/person1.jpg";
 import Person2 from "./Images/person2.jpg";
+import Carousel from "./Components/Carousel";
 
 function App() {
   const [likeAction, setLikeAction] = useState({likeHovered: false, likePressed: false, dislikeHovered: false, dislikePressed: false})
@@ -76,7 +77,7 @@ function App() {
       </div>
      {likeAction.likePressed && <Match></Match>}
 
-      {/* <Card></Card> */}
+  
     </div>
   );
 }

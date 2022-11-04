@@ -17,6 +17,28 @@ function Buttons({ setLikeAction, likeAction }) {
           stiffness: 500,
         }}
         whileTap={{ scale: 0.9 }}
+
+        onClick={() =>
+          setLikeAction({
+            ...likeAction,
+            dislikePressed: !likeAction.dislikePressed,
+          })
+        }
+        onMouseEnter={() =>{
+          setLikeAction({
+            ...likeAction,
+            dislikeHovered: !likeAction.dislikeHovered,
+          })
+          setReverseButtons(!reverseButtons)
+          }
+        }
+        onMouseLeave={() =>
+          setLikeAction({
+            ...likeAction,
+            dislikeHovered: !likeAction.dislikeHovered,
+          })
+        }
+
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,27 +47,7 @@ function Buttons({ setLikeAction, likeAction }) {
           strokeWidth="1.5"
           stroke="white"
           className="w-8 h-8"
-          onClick={() =>
-            setLikeAction({
-              ...likeAction,
-              dislikePressed: !likeAction.dislikePressed,
-            })
-          }
-          onMouseEnter={() =>{
-            setLikeAction({
-              ...likeAction,
-              dislikeHovered: !likeAction.dislikeHovered,
-            })
-            setReverseButtons(!reverseButtons)
-            }
-          }
-          onMouseLeave={() =>
-            setLikeAction({
-              ...likeAction,
-              dislikeHovered: !likeAction.dislikeHovered,
-            })
-          }
-    
+          
         >
           <path
             strokeLinecap="round"
@@ -65,6 +67,24 @@ function Buttons({ setLikeAction, likeAction }) {
           stiffness: 500,
         }}
         whileTap={{ scale: 0.9 }}
+        onClick={() =>
+          setLikeAction({
+            ...likeAction,
+            likePressed: !likeAction.likePressed,
+          })
+        }
+        onMouseEnter={() =>
+          setLikeAction({
+            ...likeAction,
+            likeHovered: !likeAction.likeHovered,
+          })
+        }
+        onMouseLeave={() =>
+          setLikeAction({
+            ...likeAction,
+            likeHovered: !likeAction.likeHovered,
+          })
+        }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,24 +93,7 @@ function Buttons({ setLikeAction, likeAction }) {
           strokeWidth="1.5"
           stroke="white"
           className="w-8 h-8"
-          onClick={() =>
-            setLikeAction({
-              ...likeAction,
-              likePressed: !likeAction.likePressed,
-            })
-          }
-          onMouseEnter={() =>
-            setLikeAction({
-              ...likeAction,
-              likeHovered: !likeAction.likeHovered,
-            })
-          }
-          onMouseLeave={() =>
-            setLikeAction({
-              ...likeAction,
-              likeHovered: !likeAction.likeHovered,
-            })
-          }
+          
         >
           <path
             strokeLinecap="round"
