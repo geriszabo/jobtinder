@@ -18,7 +18,7 @@ function App() {
 
   return (
     //Container of the whole app
-    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen h-screen flex items-center flex-col items-center"
+    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen min-h-screen flex items-center flex-col items-center"
 
     
     >
