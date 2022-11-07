@@ -42,13 +42,13 @@ export const persons = [
             <br />
 
             <p>
-              I'm looking for a serious work relationship as a developer. React
+              I'm a self thaught programmer, and I'm looking for a serious work relationship as a developer. React
               would be my preferred framework of choice, but I'm planning to
               learn TS and Angular in the very near future. 👨‍💻
               <br />
               <br />
-              Right now I'm scripting (JavaScript) a cloud☁️ based low-code platform for a
-              living in Budapest Hungary.
+              Right now I am working as a software engineer and I'm doing scripting in JavaScript on a cloud☁️ based low-code platform in Budapest Hungary.
+             
             </p>
             <br />
             <p>
@@ -74,6 +74,14 @@ export const persons = [
             <p>
               I speak native hungarian and I'm pretty confident in my english
               and german skills as well. 🇭🇺🇬🇧🇩🇪
+            </p>
+            <br />
+            <p>
+              So why should you hire me?🤔
+            </p>
+            <p>
+              Well I really like what I do because I love intellectual challenges,
+              so I am therefore naturally motivated by coding.
             </p>
             <br />
             <p></p>

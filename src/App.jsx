@@ -15,48 +15,68 @@ function App() {
     dislikeHovered: false,
     dislikePressed: false,
   });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeHandler = () => {
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", closeHandler);
+
+    return () => document.removeEventListener("click", closeHandler);
+  }, []);
 
   return (
     //Container of the whole app
-    
-    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen h-screen sm:min-h-screen flex items-center flex-col items-center overflow-x-hidden"
-    initial={{ opacity: 0}}
-    animate={{ opacity: 1}}
-    transition={{
-      duration: 0.4,
-      delay: 0.4,
-      staggerChildren: 1,
-      type: "spring",
-      bounce: 0.5,
-    }}
-    
+
+    <motion.div
+      className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen h-screen sm:min-h-screen flex items-center flex-col items-center overflow-x-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.4,
+        delay: 0.4,
+        staggerChildren: 1,
+        type: "spring",
+        bounce: 0.5,
+      }}
+      onClick={closeHandler}
     >
       {/* A header obviously */}
       <Header></Header>
 
       {/* Container of all the cards being mapped*/}
-      {likeAction.likePressed ? "" : <div className="flex flex-col justify-between items-between px-4 pb-4 gap-5">
-        {persons.map((e, i) => (
-          <Card
-            key={i}
-            name={e.name}
-            age={e.age}
-            img1={e.img1}
-            img2={e.img2}
-            rotate={e.rotate}
-            translateX={e.translateX}
-            translateY={e.translateY}
+      {likeAction.likePressed ? (
+        ""
+      ) : (
+        <div className="flex flex-col justify-between items-between px-4 pb-4 gap-5">
+          {persons.map((e, i) => (
+            <Card
+              key={i}
+              name={e.name}
+              age={e.age}
+              img1={e.img1}
+              img2={e.img2}
+              rotate={e.rotate}
+              translateX={e.translateX}
+              translateY={e.translateY}
+              likeAction={likeAction}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+            ></Card>
+          ))}
+          <Buttons
+            setLikeAction={setLikeAction}
             likeAction={likeAction}
-          ></Card>
-        ))}
-        <Buttons
-          setLikeAction={setLikeAction}
-          likeAction={likeAction}
-        ></Buttons>
-      </div>}
+          ></Buttons>
+        </div>
+      )}
 
       {/* Match screen */}
-      {likeAction.likePressed && <Match likeAction={likeAction} setLikeAction={setLikeAction}></Match>}
+      {likeAction.likePressed && (
+        <Match likeAction={likeAction} setLikeAction={setLikeAction}></Match>
+      )}
     </motion.div>
   );
 }

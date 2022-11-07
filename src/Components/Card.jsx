@@ -13,8 +13,10 @@ function Card({
   translateX,
   translateY,
   likeAction,
+  isOpen,
+  setIsOpen
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   const pic1Ref = useRef();
   const pic2Ref = useRef();
@@ -36,7 +38,7 @@ function Card({
         top: 0,
         right: 0,
       }}
-      
+      onClick={(e) => e.stopPropagation()}
     >
       <motion.div
         //Animation settings
@@ -63,7 +65,7 @@ function Card({
       >
         {/* Card image with buttons*/}
         <div className={classes.card.pic}>
-          <button
+          {/* <button
             className={`left-0 ${classes.card.picButtons}`}
             onClick={(e) => {
               pic1Ref.current.scrollIntoView({ behavior: "smooth" });
@@ -71,7 +73,7 @@ function Card({
             }}
           >
             <ChevronLeft></ChevronLeft>
-          </button>
+          </button> */}
           <motion.img
             draggable="false"
             layout
@@ -79,6 +81,7 @@ function Card({
             src={img1}
             alt={`picture of ${name}`}
             ref={pic1Ref}
+            
           />
 
           <motion.img
@@ -89,7 +92,7 @@ function Card({
             alt={`picture of ${name}`}
             ref={pic2Ref}
           />
-          <button
+          {/* <button
             className={`right-0 ${classes.card.picButtons}`}
             onClick={(e) => {
               pic2Ref.current.scrollIntoView({ behavior: "smooth" });
@@ -97,7 +100,7 @@ function Card({
             }}
           >
             <ChevronRight></ChevronRight>
-          </button>
+          </button> */}
         </div>
 
         {/* Card header */}

@@ -20,11 +20,12 @@ function Buttons({ setLikeAction, likeAction }) {
           stiffness: 500,
         }}
         whileTap={{ scale: 0.9 }}
-        onClick={() =>
+        onClick={() =>{
           setLikeAction({
             ...likeAction,
             dislikePressed: !likeAction.dislikePressed,
           })
+          setReverseButtons(!reverseButtons);}
         }
         onMouseEnter={() => {
           setLikeAction({
