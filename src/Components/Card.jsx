@@ -14,22 +14,23 @@ function Card({
   translateY,
   likeAction,
   isOpen,
-  setIsOpen
+  setIsOpen,
 }) {
   // const [isOpen, setIsOpen] = useState(false);
 
   const pic1Ref = useRef();
   const pic2Ref = useRef();
 
+  console.log(likeAction)
+
   return (
     <motion.div
       className={`
-
+      drop-shadow-2xl
       relative 
       duration-500
       ${likeAction.likePressed ? "translate-x-96 rotate-12 " : ""}
       ${likeAction.likeHovered ? "translate-x-20 rotate-12 " : ""}
-      
       `}
       drag
       dragConstraints={{
@@ -81,7 +82,6 @@ function Card({
             src={img1}
             alt={`picture of ${name}`}
             ref={pic1Ref}
-            
           />
 
           <motion.img
