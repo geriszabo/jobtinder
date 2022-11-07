@@ -18,15 +18,23 @@ function App() {
 
   return (
     //Container of the whole app
-    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen h-screen flex items-center flex-col items-center"
-
+    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen flex items-center flex-col items-center"
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{
+      duration: 0.4,
+      delay: 0.4,
+      staggerChildren: 1,
+      type: "spring",
+      bounce: 0.5,
+    }}
     
     >
       {/* A header obviously */}
       <Header></Header>
 
       {/* Container of all the cards being mapped*/}
-      <div className="flex flex-col justify-between items-between h-screen px-4 pb-4">
+      <div className="flex flex-col justify-between items-between px-4 pb-4 gap-5">
         {persons.map((e, i) => (
           <Card
             key={i}
