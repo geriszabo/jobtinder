@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { classes } from "./Classnames";
+import { Bio } from "./Data";
+import { ChevronRight, ChevronLeft } from "./IconsImages";
 
 function Card({
   img1,
@@ -13,16 +16,18 @@ function Card({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const pic1Ref = useRef();
+  const pic2Ref = useRef();
+
   return (
     <motion.div
       className={`
+
       relative 
       duration-500
-      
       ${likeAction.likePressed ? "translate-x-96 rotate-12 " : ""}
       ${likeAction.likeHovered ? "translate-x-20 rotate-12 " : ""}
-      ${likeAction.dislikePressed ? "-translate-x-96 -rotate-12 " : ""}
-      ${likeAction.dislikeHovered ? "-translate-x-20 -rotate-12 " : ""}
+      
       `}
       drag
       dragConstraints={{
@@ -31,6 +36,7 @@ function Card({
         top: 0,
         right: 0,
       }}
+      
     >
       <motion.div
         //Animation settings
@@ -53,38 +59,44 @@ function Card({
         //Functional settings
         onClick={() => setIsOpen(!isOpen)}
         //Classes
-        className="bg-white rounded-md shadow-md p-0  text-gray-700 max-w-[18rem] max-h-[34rem] drop-shadow-xl overflow-scroll z-10"
+        className={classes.card.firstDiv}
       >
         {/* Card image with buttons*/}
-        <div
-          className="flex flex-row overflow-x-auto snap-mandatory snap-x scrollbar-hide"
-          style={{ border: "1px solid red red" }}
-        >
+        <div className={classes.card.pic}>
           <button
-            className="absolute left-0 top-40 bg-white h-10 w-10 rounded-full"
-            // onClick={(e) => e.stopPropagation()}
+            className={`left-0 ${classes.card.picButtons}`}
+            onClick={(e) => {
+              pic1Ref.current.scrollIntoView({ behavior: "smooth" });
+              e.stopPropagation();
+            }}
           >
-            left
+            <ChevronLeft></ChevronLeft>
           </button>
           <motion.img
             draggable="false"
             layout
-            className="object-contain w-96  snap-center"
+            className={classes.card.images}
             src={img1}
             alt={`picture of ${name}`}
+            ref={pic1Ref}
           />
+
           <motion.img
             draggable="false"
             layout
-            className="object-cover w-96  snap-center"
+            className={classes.card.images}
             src={img2}
             alt={`picture of ${name}`}
+            ref={pic2Ref}
           />
           <button
-            className="absolute right-0 top-40 bg-white h-10 w-10 rounded-full"
-            onClick={(e) => e.stopPropagation()}
+            className={`right-0 ${classes.card.picButtons}`}
+            onClick={(e) => {
+              pic2Ref.current.scrollIntoView({ behavior: "smooth" });
+              e.stopPropagation();
+            }}
           >
-            right
+            <ChevronRight></ChevronRight>
           </button>
         </div>
 
@@ -103,29 +115,7 @@ function Card({
             className="px-2"
             className="text-sm px-3"
           >
-            <p>Hi I'm Geri 🙋🏻‍♂️</p>
-            <br />
-
-            <p>
-              I'm looking for a serious work relationship as a developer. React
-              would be my preferred framework of choice, but I'm planning to
-              learn TS and Angular in the very near future. 👨‍💻
-              <br />
-              <br />
-              Right now I'm scripting a cloud based☁️ low-code platform for a
-              living in Budapest Hungary.
-            </p>
-            <br />
-            <p>
-              You can find me on <a href="https://www.linkedin.com/in/gergoszabo87/" target="_blank" className="text-blue-500 font-bold">LinkedIn</a> and on <a href="https://github.com/geriszabo" target="_blank" className="text-blue-500 font-bold">Github</a> as well.
-            </p>
-            <br />
-            <p>
-              I speak native hungarian and I'm pretty confident in my english
-              and german skills as well. 🇭🇺🇬🇧🇩🇪
-            </p>
-            <br />
-            <p></p>
+            <Bio></Bio>
           </motion.div>
         )}
       </motion.div>

@@ -19,3 +19,11 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.outline-toitle {
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 2px black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

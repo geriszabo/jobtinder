@@ -1,5 +1,6 @@
 import React from 'react'
 import {motion} from "framer-motion"
+import {classes} from "./Classnames"
 
 function Header() {
   return (
@@ -12,9 +13,9 @@ function Header() {
         stiffness: 500}
     }
     style={{userSelect: "none"}}
-    className='text-6xl font-bold color-gradient-to-r from-red-500 to-cyan-500 relative drop-shadow-md m-5'>
-        <h1 className='text-6xl text-white'><span className='line-through'>Tind</span>er</h1>
-        <h1 className='absolute -left-5 top-0 text-transparent text-6xl bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 -rotate-12 '>Work</h1>
+    className={classes.header.container}>
+        <h1 className={classes.header.firstChild}><span className='line-through'>Tind</span>er</h1>
+        <h1 className={classes.header.secondChild}>Work</h1>
     </motion.div>
   )
 }
