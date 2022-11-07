@@ -9,7 +9,7 @@ function Match({ likeAction, setLikeAction }) {
       animate={{ opacity: 1, scale: 1 }}
       transition={{
         duration: 0.4,
-        delay: 0.4,
+       
         staggerChildren: 1,
         type: "spring",
         bounce: 0.2,

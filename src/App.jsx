@@ -19,7 +19,7 @@ function App() {
   return (
     //Container of the whole app
     
-    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen md:min-h-screen flex items-center flex-col items-center "
+    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen md:min-h-screen flex items-center flex-col items-center overflow-x-hidden"
     initial={{ opacity: 0}}
     animate={{ opacity: 1}}
     transition={{
@@ -35,7 +35,7 @@ function App() {
       <Header></Header>
 
       {/* Container of all the cards being mapped*/}
-      {!likeAction.dislikePressed && <div className="flex flex-col justify-between items-between px-4 pb-4 gap-5">
+      {likeAction.likePressed ? "" : <div className="flex flex-col justify-between items-between px-4 pb-4 gap-5">
         {persons.map((e, i) => (
           <Card
             key={i}
