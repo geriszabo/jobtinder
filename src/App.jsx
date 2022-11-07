@@ -18,7 +18,7 @@ function App() {
 
   return (
     //Container of the whole app
-    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen min-h-screen flex items-center flex-col items-center"
+    <motion.div className="bg-gradient-to-br from-purple-700 to-cyan-400 w-screen h-screen flex items-center flex-col items-center"
 
     
     >
@@ -26,7 +26,7 @@ function App() {
       <Header></Header>
 
       {/* Container of all the cards being mapped*/}
-      <div className="height-fix flex flex-col justify-between items-between  h-screen px-4 pb-4">
+      <div className="flex flex-col justify-between items-between h-screen px-4 pb-4">
         {persons.map((e, i) => (
           <Card
             key={i}
