@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 function Match({ likeAction, setLikeAction }) {
   return (
     <motion.div
-      className="absolute flex flex-col justify-center items-center min-h-full w-screen bg-gradient-to-br from-green-500 to-cyan-500 "
+      className="absolute flex flex-col justify-center items-center min-h-screen w-screen bg-gradient-to-br from-green-500 to-cyan-500 "
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
