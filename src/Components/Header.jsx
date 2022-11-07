@@ -14,8 +14,8 @@ function Header() {
     }
     style={{userSelect: "none"}}
     className={classes.header.container}>
-        <h1 className={classes.header.firstChild}><span className='line-through'>Tind</span>er</h1>
-        <h1 className={classes.header.secondChild}>Work</h1>
+        <h1 className={classes.header.firstChild}>Tinder</h1>
+        <h1 className={classes.header.secondChild}>Job</h1>
     </motion.div>
   )
 }
