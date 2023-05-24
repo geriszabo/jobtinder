@@ -43,11 +43,11 @@ export function Bio() {
       <p>
         I'm a self thaught programmer, and I coded this little app because I'm
         looking for a serious work relationship as a frontend developer. <br />
-        React would be my preferred framework of choice, but I'm planning to
-        learn TS and Angular in the very near future. 👨‍💻
+        React would be my preferred framework of choice, but I'm open to
+        learning interesting new tech as well. 👨‍💻
         <br />
         <br />
-        Right now I am working as a front-end developer at Veeva Hungary and I'm working on a medical dashboard for a big pharma company💉 in Budapest Hungary.
+        Right now I am working as a front-end developer at Veeva Hungary and I'm implementing functional and UI changes on a medical dashboard for a big pharma company💉 in Budapest Hungary.
       </p>
       <br />
       <p>
