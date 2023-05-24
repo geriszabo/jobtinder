@@ -8,7 +8,7 @@ export const persons = [
   // {
   //   name: "Sam",
   //   age: 135,
-  //   bio: "Hi I'm An idiot",
+  //   bio: "Hi I'm Sam",
   //   img1: Person1,
   //   rotate: 25,
   //   translateY: "1rem",
@@ -17,7 +17,7 @@ export const persons = [
   // {
   //   name: "Igor",
   //   age: 69,
-  //   bio: "Well what a fucking waste of time this is",
+  //   bio: "Hi I'm Igor",
   //   img1: Person2,
   //   rotate: -25,
   //   translateY: "1rem",
@@ -47,8 +47,7 @@ export function Bio() {
         learn TS and Angular in the very near future. 👨‍💻
         <br />
         <br />
-        Right now I am working as a software engineer and I'm doing scripting in
-        JavaScript on a cloud☁️ based low-code platform in Budapest Hungary.
+        Right now I am working as a front-end developer at Veeva Hungary and I'm working on a medical dashboard for a big pharma company💉 in Budapest Hungary.
       </p>
       <br />
       <p>
